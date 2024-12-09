@@ -77,7 +77,7 @@ npm install
 ### 4. Start the application:
 
 ```bash
-npm run dev
+node app.js
 ```
 ## Usage 🔧
 
