@@ -1,0 +1,132 @@
+<%layout("layouts/boilerplate")%>
+
+  <% if (typeof successMessage !=='undefined' && successMessage) { %>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check-circle-fill" viewBox="0 0 16 16">
+        <path
+          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+      </symbol>
+    </svg>
+    <div style="display: flex; justify-content: center; ">
+      <div class="alert alert-success d-flex align-items-center p-2 mt-2 alert-dismissible fade show" role="alert"
+        style=" padding: 12px 24px !important; width:600px;">
+        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success" style="width: 16px; height: 16px;">
+          <use xlink:href="#check-circle-fill" />
+        </svg>
+        <div>
+          <p class="m-0">
+            <%=successMessage%>
+          </p>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+            style="padding: 15px 15px; "></button>
+        </div>
+      </div>
+    </div>
+    <% } %>
+
+      <div class="filters">
+        <div class="filter appear-on-1114">
+          <a href="/listings/filter?category=trending">
+            <img src="https://a0.muscache.com/pictures/3726d94b-534a-42b8-bca0-a0304d912260.jpg" alt="Trending">
+            <p>Trending</p>
+          </a>
+        </div>
+        <div class="filter appear-on-1114">
+          <a href="/listings/filter?category=rooms">
+            <img src="https://a0.muscache.com/pictures/7630c83f-96a8-4232-9a10-0398661e2e6f.jpg" alt="Rooms">
+            <p>Rooms</p>
+          </a>
+        </div>
+        <div class="filter appear-on-1400">
+          <a href="/listings/filter?category=top%20cities">
+            <img src="https://a0.muscache.com/pictures/ed8b9e47-609b-44c2-9768-33e6a22eccb2.jpg" alt="Top Cities">
+            <p>Top cities</p>
+          </a>
+        </div>
+        <div class="filter appear-on-1200">
+          <a href="/listings/filter?category=treehouses">
+            <img src="https://a0.muscache.com/pictures/4d4a4eba-c7e4-43eb-9ce2-95e1d200d10e.jpg" alt="Treehouses">
+            <p>Treehouses</p>
+          </a>
+        </div>
+        <div class="filter appear-on-1200">
+          <a href="/listings/filter?category=islands">
+            <img src="https://a0.muscache.com/pictures/8e507f16-4943-4be9-b707-59bd38d56309.jpg" alt="Islands">
+            <p>Islands</p>
+          </a>
+        </div>
+        <div class="filter appear-on-sm">
+          <a href="/listings/filter?category=camping">
+            <img src="https://a0.muscache.com/pictures/ca25c7f3-0d1f-432b-9efa-b9f5dc6d8770.jpg" alt="Camping">
+            <p>Camping </p>
+          </a>
+        </div>
+        <div class="filter appear-on-676">
+          <a href="/listings/filter?category=castles">
+            <img src="https://a0.muscache.com/pictures/1b6a8b70-a3b6-48b5-88e1-2243d9172c06.jpg" alt="Castles">
+            <p>Castles</p>
+          </a>
+        </div>
+        <div class="filter appear-on-992">
+          <a href="/listings/filter?category=beachfront">
+            <img src="https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg" alt="Beachfront">
+            <p>Beachfront</p>
+          </a>
+        </div>
+        <div class="filter appear-on-830">
+          <a href="/listings/filter?category=amazing%20pools">
+            <img src="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg" alt="Amazing Pools">
+            <p>Amazing pools</p>
+          </a>
+        </div>
+        <div class="filter appear-on-md">
+          <a href="/listings/filter?category=beach">
+            <img src="https://a0.muscache.com/pictures/10ce1091-c854-40f3-a2fb-defc2995bcaf.jpg" alt="Beach">
+            <p>Beach</p>
+          </a>
+        </div>
+
+        <div class="dropdown-filters">
+          <select id="categoryDropdown" class="filter-opt" onchange="handleSelectChange(this)">
+            <option value="/listings/filter?category=all" selected>Categories</option>
+            <option value="/listings/filter?category=trending">Trending</option>
+            <option value="/listings/filter?category=rooms">Rooms</option>
+            <option value="/listings/filter?category=top%20cities">Top Cities</option>
+            <option value="/listings/filter?category=treehouses">Treehouses</option>
+            <option value="/listings/filter?category=islands">Islands</option>
+            <option value="/listings/filter?category=camping">Camping</option>
+            <option value="/listings/filter?category=castles">Castles</option>
+            <option value="/listings/filter?category=beachfront">Beachfront</option>
+            <option value="/listings/filter?category=amazing%20pools">Amazing Pools</option>
+            <option value="/listings/filter?category=beach">Beach</option>
+          </select>
+        </div>
+
+        <div class="tax-switch ms-auto">
+          <div class="form-check-reverse form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Show taxes</label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <% for(listing of allListings){%>
+          <a href="/listings/<%=listing.id%>" class="listing-link">
+            <div class="card col listing-card">
+              <img src="<%= listing.image.url%>" class="card-img-top ind-list-img" alt="listing_image">
+              <div class="card-img-overlay"></div>
+              <div class="card-body">
+                <p class="card-text">
+                  <b>
+                    <%= listing.title%>
+                  </b> <br>
+                  &#8377 <%=listing.price.toLocaleString("en-IN")%> / night
+                    <i class="tax-info"> &nbsp; &nbsp;+18% GST</i>
+                </p>
+              </div>
+            </div>
+          </a>
+          <%}%>
+      </div>
