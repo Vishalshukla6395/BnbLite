@@ -94,24 +94,22 @@ npm run dev
 - Contributions are welcome! If you'd like to improve or add features to the BnbLite project, follow these steps:
     ### 1. Fork the repository.
     ### 2. Create a new branch: 
-     ```bash
+    ```bash
        git checkout -b feature-name.
 
-     ```
-   3. ### Commit your changes:
-      ```bash
+    ```
+    ### 3. Commit your changes:
+   ```bash
        git commit -m 'Add new feature'.
-       ``` 
-   4. ### Push to the branch: 
-       ```bash
+    ``` 
+    ### 4. Push to the branch: 
+    ```bash
        git push origin feature-name.
-       ``` 
-   5. ### Open a pull request.
+     ``` 
+    ###  5. Open a pull request.
 
 ### Thank You! 🙏
 Thank you for considering contributing to BnbLite! Your contributions help make this project better for everyone. We appreciate your time and effort!
-
-
 
 
 ## Contact 📬
