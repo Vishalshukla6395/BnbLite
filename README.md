@@ -87,7 +87,10 @@ node app.js
 - Admin users can log in and manage property listings and crud operations for listings and reviews.
 
 - Browse and filter listings based on your favourite Category
-  
+
+### [Live Demo](https://bnblite.onrender.com/)
+
+You can explore the live demo of BnbLite and experience the features firsthand.
 
 ## Contributing 🤝
 
