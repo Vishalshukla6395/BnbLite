@@ -128,6 +128,11 @@ app.get('/search', async (req, res) => {
   
 });
 
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
+
+
 // 404 route handler
 app.all("*",(req,res,next)=>{
   next(new ExpressError(404,"Page Not Found!"))
