@@ -8,6 +8,7 @@ BnbLite is a full-stack web application that allows users to list properties and
 - Project Overview
 - Features
 - Tech Stack
+- Live Demo
 - Installation
 - Usage
 - Contributing
@@ -54,6 +55,10 @@ BnbLite is a full-stack web application that allows users to list properties and
 - **Database:** MongoDB (MongoDB Atlas for cloud hosting)
 - **Deployment & version control:** Git, Github, Render
 
+## Live Demo 🚀
+
+Check out the live version of the BnbLite here: [Live Demo](https://bnblite.onrender.com/)
+
 ## Installation 💻
 
 
@@ -87,10 +92,6 @@ node app.js
 - Admin users can log in and manage property listings and crud operations for listings and reviews.
 
 - Browse and filter listings based on your favourite Category
-
-### [Live Demo](https://bnblite.onrender.com/)
-
-You can explore the live demo of BnbLite and experience the features firsthand.
 
 ## Contributing 🤝
 
